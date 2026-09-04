@@ -6,6 +6,7 @@ import { ObraBordadoSection } from './components/ObraBordadoSection';
 import { GallerySection } from './components/GallerySection';
 import { DifusionCatalogoSection } from './components/DifusionCatalogoSection';
 import { AboutSection } from './components/AboutSection';
+import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { ChevronUp } from 'lucide-react';
 
@@ -38,7 +39,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-canvas text-charcoal font-sans antialiased flex flex-col">
       {/* Navigation Header */}
-      <Header onLogoClick={() => scrollToSection('inicio')} />
+      <Header onLogoClick={() => scrollToSection('inicio')} onNavigate={scrollToSection} />
 
       {/* Main Page Layout */}
       <main className="flex-1 space-y-0">
@@ -63,6 +64,9 @@ export default function App() {
 
         {/* About Section */}
         <AboutSection />
+
+        {/* Contact & Postulation */}
+        <ContactForm />
 
       </main>
 

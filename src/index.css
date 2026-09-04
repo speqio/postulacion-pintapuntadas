@@ -52,6 +52,10 @@ html, body {
   max-width: 100vw;
 }
 
+main [id] {
+  scroll-margin-top: 5rem;
+}
+
 /* Custom delicate scrollbar */
 ::-webkit-scrollbar {
   width: 5px;

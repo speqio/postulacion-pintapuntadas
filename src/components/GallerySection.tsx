@@ -14,14 +14,14 @@ export const GallerySection: React.FC = () => {
         {/* Section Header */}
         <ScrollReveal direction="up">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
+            <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
               <Camera className="w-3.5 h-3.5" />
               Exposición Fotográfica
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-light">
               Galería de Trabajos & Proceso
             </h2>
-            <p className="font-serif italic text-sm sm:text-base text-muted">
+            <p className="font-serif italic text-base sm:text-lg text-muted">
               Explora de cerca la textura de los hilos, bastidores terminados y las jornadas creativas de nuestros talleres.
             </p>
           </div>
@@ -44,7 +44,7 @@ export const GallerySection: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-canvas z-20">
-                    <span className="text-[9px] uppercase tracking-[0.3em] text-accent-muted font-sans">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-accent-muted font-sans">
                       {item.category}
                     </span>
                     <h3 className="font-serif italic text-lg font-light text-white line-clamp-1">
@@ -58,19 +58,19 @@ export const GallerySection: React.FC = () => {
                 </div>
 
                 <div className="p-4 bg-canvas border-t border-border-subtle flex-1 flex flex-col justify-between space-y-1">
-                  <span className="text-[9px] font-sans uppercase tracking-[0.25em] text-accent-muted">
+                  <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-accent-muted">
                     {item.category}
                   </span>
                   <h4 className="font-serif italic text-base text-charcoal font-light line-clamp-1">
                     {item.title}
                   </h4>
                   {item.description && (
-                    <p className="text-xs text-body font-sans leading-relaxed line-clamp-2">
+                    <p className="text-sm text-body font-sans leading-relaxed line-clamp-2">
                       {item.description}
                     </p>
                   )}
                   {item.location && (
-                    <p className="text-xs text-muted font-sans flex items-center gap-1">
+                    <p className="text-sm text-muted font-sans flex items-center gap-1">
                       <MapPin className="w-3 h-3 text-accent-muted" />
                       {item.location}
                     </p>
@@ -110,11 +110,11 @@ export const GallerySection: React.FC = () => {
 
             <div className="p-6 space-y-3 bg-canvas">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-accent-muted">
+                <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted">
                   {activeLightboxItem.category}
                 </span>
                 {activeLightboxItem.location && (
-                  <span className="text-xs font-sans text-muted flex items-center gap-1">
+                  <span className="text-sm font-sans text-muted flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5 text-accent-muted" />
                     {activeLightboxItem.location}
                   </span>
@@ -125,12 +125,12 @@ export const GallerySection: React.FC = () => {
                 {activeLightboxItem.title}
               </h3>
 
-              <p className="font-sans text-sm text-body leading-relaxed font-normal">
+              <p className="font-sans text-base text-body leading-relaxed font-normal">
                 {activeLightboxItem.description}
               </p>
 
               {activeLightboxItem.technique && (
-                <div className="pt-2 border-t border-border-subtle text-xs font-sans text-muted">
+                <div className="pt-2 border-t border-border-subtle text-sm font-sans text-muted">
                   <strong className="text-charcoal font-medium">Técnica destacada:</strong> {activeLightboxItem.technique}
                 </div>
               )}

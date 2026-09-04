@@ -102,14 +102,14 @@ export const ObraBordadoSection: React.FC = () => {
         {/* Header */}
         <ScrollReveal direction="up">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
+            <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
               <Gem className="w-3.5 h-3.5" />
               Página 2
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-light">
               Prototipo Artístico y Muestras de Bordado
             </h2>
-            <p className="font-serif italic text-sm sm:text-base text-muted">
+            <p className="font-serif italic text-base sm:text-lg text-muted">
               Tres piezas del archivo de la artista que documentan cómo un paisaje se traduce, puntada a puntada, en textil.
             </p>
           </div>
@@ -147,7 +147,7 @@ export const ObraBordadoSection: React.FC = () => {
                   {/* Detalle técnico */}
                   <div className="lg:col-span-7 space-y-4">
                     <div className="space-y-1.5">
-                      <span className="text-[9px] font-sans uppercase tracking-[0.25em] text-accent-muted">
+                      <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-accent-muted">
                         {design.location}
                       </span>
                       <h3 className="font-serif text-2xl text-charcoal font-light">
@@ -160,13 +160,13 @@ export const ObraBordadoSection: React.FC = () => {
                         "{pieza.cita}"
                       </p>
                     ) : (
-                      <p className="font-sans text-sm text-body leading-relaxed">
+                      <p className="font-sans text-base text-body leading-relaxed">
                         {design.description}
                       </p>
                     )}
 
                     {/* Chip de tiempo */}
-                    <div className="flex flex-wrap items-center gap-2 text-xs font-sans">
+                    <div className="flex flex-wrap items-center gap-2 text-sm font-sans">
                       <span className="flex items-center gap-1.5 px-3 py-1.5 bg-canvas border border-border-subtle text-body">
                         <Clock className="w-3 h-3 text-accent-muted" />
                         {design.timeHours} horas de bordado
@@ -174,7 +174,7 @@ export const ObraBordadoSection: React.FC = () => {
                       {pieza.procesoFotos && (
                         <button
                           onClick={() => setActiveProceso(pieza.procesoFotos)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 bg-charcoal text-canvas hover:bg-[#333333] transition-colors uppercase tracking-[0.15em] text-[10px]"
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-charcoal text-canvas hover:bg-[#333333] transition-colors uppercase tracking-[0.15em] text-xs"
                         >
                           <Images className="w-3 h-3 text-accent-muted" />
                           Ver Proceso
@@ -184,13 +184,13 @@ export const ObraBordadoSection: React.FC = () => {
 
                     {/* Puntos usados */}
                     <div className="space-y-1.5 pt-2 border-t border-border-subtle">
-                      <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-accent-muted flex items-center gap-1.5">
+                      <span className="text-xs font-sans uppercase tracking-[0.2em] text-accent-muted flex items-center gap-1.5">
                         <Layers className="w-3.5 h-3.5" />
                         Puntos y Técnicas Aplicadas
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {design.stitchesUsed.map((stitch) => (
-                          <span key={stitch} className="px-2.5 py-1 bg-canvas text-charcoal text-xs font-sans border border-border-subtle">
+                          <span key={stitch} className="px-2.5 py-1 bg-canvas text-charcoal text-sm font-sans border border-border-subtle">
                             {stitch}
                           </span>
                         ))}
@@ -199,7 +199,7 @@ export const ObraBordadoSection: React.FC = () => {
 
                     {/* Paleta de hilos */}
                     <div className="space-y-1.5">
-                      <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-accent-muted">
+                      <span className="text-xs font-sans uppercase tracking-[0.2em] text-accent-muted">
                         Paleta de Hilos
                       </span>
                       <div className="grid grid-cols-3 gap-3">
@@ -217,7 +217,7 @@ export const ObraBordadoSection: React.FC = () => {
                                 ))}
                               </div>
                               <span
-                                className="block text-center text-[9px] sm:text-[10px] font-sans uppercase tracking-[0.12em] text-charcoal"
+                                className="block text-center text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.12em] text-charcoal"
                               >
                                 {color.name}
                               </span>
@@ -247,7 +247,7 @@ export const ObraBordadoSection: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-accent-muted">
+              <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted">
                 Galería de Proceso
               </span>
               <button

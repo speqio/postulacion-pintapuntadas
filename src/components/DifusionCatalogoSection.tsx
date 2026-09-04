@@ -18,14 +18,14 @@ export const DifusionCatalogoSection: React.FC = () => {
         {/* Header */}
         <ScrollReveal direction="up">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
+            <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
               <Megaphone className="w-3.5 h-3.5" />
               Maquetado de Difusión y Catálogo
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-light">
               Del Taller a la Comunidad: Registro y Difusión
             </h2>
-            <p className="font-serif italic text-sm sm:text-base text-muted">
+            <p className="font-serif italic text-base sm:text-lg text-muted">
               Maquetas del catálogo físico/digital y de las piezas gráficas que acompañarán la convocatoria y la exposición itinerante.
             </p>
           </div>
@@ -42,9 +42,9 @@ export const DifusionCatalogoSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* Portada */}
-              <div className="bg-charcoal aspect-3/4 relative overflow-hidden arch-frame border border-[#333333]">
+              <div className="group bg-charcoal aspect-3/4 relative overflow-hidden arch-frame border border-[#333333]">
                 <div className="absolute inset-4 border border-accent-muted opacity-30 z-10 pointer-events-none" />
-                <img src={portadaImg} alt="Portada del catálogo" className="w-full h-full object-cover opacity-70" />
+                <img src={portadaImg} alt="Portada del catálogo" className="w-full h-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-charcoal via-charcoal/40 to-transparent z-20" />
                 <div className="absolute inset-x-0 top-8 text-center px-6 z-30">
                   <span className="text-[9px] uppercase tracking-[0.35em] text-accent-muted font-sans flex items-center justify-center gap-2">
@@ -65,8 +65,8 @@ export const DifusionCatalogoSection: React.FC = () => {
               {/* Doble página interior */}
               <div className="grid grid-cols-2 bg-canvas border border-border-subtle aspect-3/4 overflow-hidden">
                 {/* Página izquierda: foto a sangre */}
-                <div className="relative overflow-hidden bg-panel">
-                  <img src={spreadImg} alt="Página interior del catálogo" className="w-full h-full object-cover" />
+                <div className="group relative overflow-hidden bg-panel">
+                  <img src={spreadImg} alt="Página interior del catálogo" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 {/* Página derecha: ficha técnica */}
                 <div className="p-4 sm:p-5 flex flex-col justify-center space-y-3 border-l border-border-subtle">
@@ -102,9 +102,9 @@ export const DifusionCatalogoSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* Template A: Convocatoria a talleres */}
-              <div className="aspect-square relative overflow-hidden bg-charcoal border border-[#333333] flex flex-col justify-between p-6 sm:p-8">
+              <div className="group aspect-square relative overflow-hidden bg-charcoal border border-[#333333] flex flex-col justify-between p-6 sm:p-8">
                 <div className="absolute inset-0">
-                  <img src={social1Img} alt="" className="w-full h-full object-cover opacity-35" />
+                  <img src={social1Img} alt="" className="w-full h-full object-cover opacity-35 transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-charcoal/60" />
                 </div>
                 <div className="relative z-10 flex items-center justify-between">
@@ -142,9 +142,9 @@ export const DifusionCatalogoSection: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 h-2/5">
-                  <div className="overflow-hidden"><img src={social2aImg} alt="" className="w-full h-full object-cover" /></div>
-                  <div className="overflow-hidden"><img src={social2bImg} alt="" className="w-full h-full object-cover" /></div>
-                  <div className="overflow-hidden"><img src={social2cImg} alt="" className="w-full h-full object-cover" /></div>
+                  <div className="group overflow-hidden"><img src={social2aImg} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+                  <div className="group overflow-hidden"><img src={social2bImg} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+                  <div className="group overflow-hidden"><img src={social2cImg} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
                 </div>
 
                 <div className="space-y-1.5">

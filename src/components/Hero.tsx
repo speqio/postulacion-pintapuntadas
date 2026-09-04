@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ArrowRight, Compass, ShieldCheck, Heart } from 'lucide-react';
 import { NeedleThreadIcon } from './NeedleThreadIcon';
 import { ScrollReveal } from './ScrollReveal';
-import spoolOfThread from '../../imagenes/spool of thread.svg';
+import atacamaBordado from '../../imagenes/atacama/atacama-transparente.png';
 
 interface HeroProps {
   onExploreTaller: () => void;
@@ -22,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Top Text Block: Eyebrow, Title & Quote */}
           <div className="space-y-8 text-left lg:col-start-1 lg:col-span-7 lg:row-start-1">
             <ScrollReveal direction="up" delay={0.1}>
-              <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-accent-muted">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-accent-muted">
                 <NeedleThreadIcon className="w-3.5 h-3.5 text-accent-muted" />
                 <span>Región de Valparaíso • Proyecto de Pamela Rojas Botto</span>
               </div>
@@ -36,8 +37,8 @@ export const Hero: React.FC<HeroProps> = ({
                     Bordado Puntada a Puntada.
                   </span>
                 </h1>
-                <p className="font-serif italic text-lg sm:text-xl text-muted">
-                  "Talleres de bordado con técnica needle painting y mediación patrimonial, dictados por Pamela Rojas Botto en Limache."
+                <p className="font-sans text-base sm:text-lg text-body max-w-md leading-snug">
+                  Talleres de needle painting y mediación patrimonial en Limache: cada participante borda el paisaje de su comuna.
                 </p>
               </div>
             </ScrollReveal>
@@ -47,29 +48,30 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="relative lg:col-start-8 lg:col-span-5 lg:row-start-1 lg:row-span-2">
             <ScrollReveal direction="left" delay={0.3}>
               <div className="relative aspect-square flex items-center justify-center p-10">
-                <img
-                  src={spoolOfThread}
-                  alt="Carrete de hilo de bordado"
-                  className="w-full h-full object-contain"
+                <motion.img
+                  src={atacamaBordado}
+                  alt="Bordado circular a mano del paisaje de Atacama, técnica needle painting"
+                  className="w-full h-full max-w-md object-contain drop-shadow-[0_25px_45px_rgba(26,26,26,0.18)]"
+                  initial={{ y: 0, rotate: -3 }}
+                  animate={{ y: [0, -16, 0], rotate: [-3, 2, -3] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 />
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Bottom Text Block: Description, CTA & Badges */}
+          {/* Bottom Text Block: CTA & Badges */}
           <div className="space-y-8 text-left lg:col-start-1 lg:col-span-7 lg:row-start-2">
-            <ScrollReveal direction="up" delay={0.3}>
-              <p className="font-sans text-sm sm:text-base text-body max-w-xl leading-relaxed font-normal">
-                Un ciclo de talleres colectivos donde cada participante aprende pintura con aguja creando una pieza propia que representa un paisaje patrimonial de su comuna, precedido por mediación etnográfica, social, ecosistémica y arquitectónica sobre el territorio elegido.
-              </p>
-            </ScrollReveal>
-
             {/* CTAs */}
             <ScrollReveal direction="up" delay={0.4}>
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onExploreTaller}
-                  className="px-8 py-4 text-[10px] uppercase tracking-[0.3em] font-sans text-canvas bg-charcoal hover:bg-[#333333] transition-colors flex items-center gap-3 group"
+                  className="px-8 py-4 text-xs uppercase tracking-[0.3em] font-sans text-canvas bg-charcoal hover:bg-[#333333] transition-colors flex items-center gap-3 group"
                 >
                   Conocer el Taller
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -83,25 +85,25 @@ export const Hero: React.FC<HeroProps> = ({
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-charcoal">
                     <Compass className="w-4 h-4 text-accent-muted" />
-                    <span className="font-sans text-xs font-semibold uppercase tracking-wider text-charcoal">Mediación Patrimonial</span>
+                    <span className="font-sans text-sm font-semibold uppercase tracking-wider text-charcoal">Mediación Patrimonial</span>
                   </div>
-                  <p className="text-xs text-muted font-sans leading-relaxed">Contexto territorial antes de cada bordado</p>
+                  <p className="text-sm text-muted font-sans leading-relaxed">Contexto territorial antes de cada bordado</p>
                 </div>
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-charcoal">
                     <ShieldCheck className="w-4 h-4 text-accent-muted" />
-                    <span className="font-sans text-xs font-semibold uppercase tracking-wider text-charcoal">Needle Painting</span>
+                    <span className="font-sans text-sm font-semibold uppercase tracking-wider text-charcoal">Needle Painting</span>
                   </div>
-                  <p className="text-xs text-muted font-sans leading-relaxed">Oficio poco representado en la oferta cultural regional</p>
+                  <p className="text-sm text-muted font-sans leading-relaxed">Oficio poco representado en la oferta cultural regional</p>
                 </div>
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-charcoal">
                     <Heart className="w-4 h-4 text-accent-muted" />
-                    <span className="font-sans text-xs font-semibold uppercase tracking-wider text-charcoal">Co-creación Comunitaria</span>
+                    <span className="font-sans text-sm font-semibold uppercase tracking-wider text-charcoal">Co-creación Comunitaria</span>
                   </div>
-                  <p className="text-xs text-muted font-sans leading-relaxed">Cada participante bordea el paisaje de su propia comuna</p>
+                  <p className="text-sm text-muted font-sans leading-relaxed">Cada participante bordea el paisaje de su propia comuna</p>
                 </div>
               </div>
             </ScrollReveal>

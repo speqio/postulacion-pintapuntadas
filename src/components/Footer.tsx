@@ -14,23 +14,23 @@ export const Footer: React.FC = () => {
               <span className="font-serif text-3xl font-light text-canvas tracking-tight block">
                 pintapuntadas
               </span>
-              <span className="block text-[9px] tracking-[0.25em] uppercase text-accent-muted font-sans font-normal">
+              <span className="block text-[10px] tracking-[0.25em] uppercase text-accent-muted font-sans font-normal">
                 Talleres de Bordado por Pamela Rojas Botto
               </span>
             </div>
 
-            <p className="font-serif italic text-sm text-border-dark leading-relaxed max-w-sm">
+            <p className="font-serif italic text-base text-border-dark leading-relaxed max-w-sm">
               "Talleres de bordado con técnica needle painting y mediación patrimonial en la Región de Valparaíso."
             </p>
 
-            <p className="font-sans text-xs text-muted leading-relaxed max-w-sm font-normal">
+            <p className="font-sans text-sm text-muted leading-relaxed max-w-sm font-normal">
               Proyecto cultural de Pamela Rojas Botto, dedicado a reinterpretar el patrimonio natural y arquitectónico del territorio en piezas textiles co-creadas junto a la comunidad.
             </p>
           </div>
 
           {/* Social & Contact */}
-          <div className="md:col-span-5 space-y-4 font-sans text-xs text-border-dark">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-accent-muted font-normal block">
+          <div className="md:col-span-5 space-y-4 font-sans text-sm text-border-dark">
+            <span className="text-xs uppercase tracking-[0.3em] text-accent-muted font-normal block">
               Redes & Contacto
             </span>
 
@@ -38,13 +38,13 @@ export const Footer: React.FC = () => {
               href="https://instagram.com/pintapuntadas"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#262626] border border-[#333333] hover:border-accent-muted transition-colors text-xs text-canvas"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#262626] border border-[#333333] hover:border-accent-muted transition-colors text-sm text-canvas"
             >
               <Instagram className="w-4 h-4 text-accent-muted" />
               <span>@pintapuntadas en Instagram</span>
             </a>
 
-            <div className="space-y-1.5 text-xs text-muted pt-2">
+            <div className="space-y-1.5 text-sm text-muted pt-2">
               <p className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-accent-muted" />
                 contacto@pintapuntadas.cl
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Legal bar */}
-        <div className="pt-8 border-t border-[#333333] flex flex-col sm:flex-row items-center justify-between text-xs text-muted font-sans gap-2">
+        <div className="pt-8 border-t border-[#333333] flex flex-col sm:flex-row items-center justify-between text-sm text-muted font-sans gap-2">
           <p>© 2026 Pintapuntadas. Todos los derechos reservados.</p>
           <p className="flex items-center gap-1">
             Diseñado con <Heart className="w-3 h-3 text-accent-muted fill-current" /> para el bordado patrimonial
