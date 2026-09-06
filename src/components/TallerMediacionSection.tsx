@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { Sprout, MapPinned, Map, Palette, Layers, Sparkles, BookOpen, HandHeart, Archive } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -131,34 +132,87 @@ export const TallerMediacionSection: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Stepper de 4 sesiones */}
+        {/* Línea de tiempo de 4 sesiones */}
         <ScrollReveal direction="up" delay={0.3}>
-          <div className="space-y-6">
+          <div className="space-y-10">
             <h3 className="text-center font-serif text-xl text-charcoal font-light">
               Estructura en 4 Sesiones de Pintura con Aguja
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {SESIONES.map((s) => (
-                <div key={s.numero} className="p-5 bg-canvas border border-border-subtle space-y-3 h-full flex flex-col">
-                  <div className="w-10 h-10 rounded-full bg-charcoal text-canvas flex items-center justify-center shrink-0">
-                    <s.icono className="w-4.5 h-4.5 text-accent-muted" />
-                  </div>
-                  <span className="text-xs font-sans uppercase tracking-[0.25em] text-accent-muted">
-                    Sesión {s.numero}
-                  </span>
-                  <h4 className="font-serif italic text-base text-charcoal font-light leading-snug">
-                    {s.titulo}
-                  </h4>
-                  <p className="text-sm text-muted font-sans leading-relaxed">
-                    {s.frase}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <SesionesTimeline />
           </div>
         </ScrollReveal>
 
       </div>
     </section>
+  );
+};
+
+const SesionesTimeline: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start center', 'end center'],
+  });
+  const progressHeight = useSpring(useTransform(scrollYProgress, [0, 1], ['0%', '100%']), {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.5,
+  });
+
+  return (
+    <div ref={containerRef} className="relative max-w-4xl mx-auto py-2">
+      {/* Línea base */}
+      <div
+        className="absolute top-0 bottom-0 left-4 sm:left-5 lg:left-1/2 w-px bg-border-subtle lg:-translate-x-1/2"
+        aria-hidden="true"
+      />
+      {/* Hilo de progreso, se llena con el scroll */}
+      <motion.div
+        className="absolute top-0 left-4 sm:left-5 lg:left-1/2 w-px bg-accent-muted lg:-translate-x-1/2 origin-top"
+        style={{ height: progressHeight }}
+        aria-hidden="true"
+      />
+
+      <ol className="space-y-14 lg:space-y-20">
+        {SESIONES.map((s, i) => {
+          const alignRight = i % 2 === 0;
+          return (
+            <motion.li
+              key={s.numero}
+              className="relative pl-12 sm:pl-14 lg:pl-0"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: 0.05, ease: [0.215, 0.61, 0.355, 1] }}
+            >
+              {/* Nodo sobre la línea */}
+              <div className="absolute left-4 sm:left-5 lg:left-1/2 top-0 -translate-x-1/2 w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-charcoal text-canvas flex items-center justify-center ring-4 ring-panel z-10 shrink-0">
+                <s.icono className="w-4 h-4 sm:w-4.5 sm:h-4.5 lg:w-5 lg:h-5 text-accent-muted" />
+              </div>
+
+              {/* Tarjeta: en mobile/tablet siempre a la derecha del nodo; en desktop alterna lados */}
+              <div
+                className={`lg:w-[calc(50%-2.5rem)] ${
+                  alignRight ? 'lg:mr-auto lg:text-right' : 'lg:ml-auto lg:text-left'
+                }`}
+              >
+                <div className="p-5 sm:p-6 lg:p-7 bg-canvas border border-border-subtle space-y-2 lg:space-y-3">
+                  <span className="text-xs lg:text-sm font-sans uppercase tracking-[0.25em] text-accent-muted">
+                    Sesión {s.numero}
+                  </span>
+                  <h4 className="font-serif italic text-base sm:text-lg lg:text-xl text-charcoal font-light leading-snug">
+                    {s.titulo}
+                  </h4>
+                  <p className="text-sm lg:text-base text-muted font-sans leading-relaxed">
+                    {s.frase}
+                  </p>
+                </div>
+              </div>
+            </motion.li>
+          );
+        })}
+      </ol>
+    </div>
   );
 };

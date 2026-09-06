@@ -14,6 +14,18 @@ export interface ThreadColor {
   hex: string;
 }
 
+export interface FichaObra {
+  titulo: string;
+  autora: string;
+  anioCreacion: string;
+  tecnica: string;
+  materiales: string;
+  dimensiones: string;
+  peso: string;
+  breveContexto: string;
+  valorEstimado: number; // in CLP
+}
+
 export interface DesignItem {
   id: string;
   title: string;
@@ -32,6 +44,7 @@ export interface DesignItem {
   includedInKit: string[];
   featured?: boolean;
   isKitAvailable: boolean;
+  ficha?: FichaObra;
 }
 
 export interface GalleryItem {

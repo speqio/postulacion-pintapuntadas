@@ -16,7 +16,6 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'galeria', label: 'Galería' },
   { id: 'difusion', label: 'Difusión y Catálogo' },
   { id: 'nosotros', label: 'Sobre Nosotros' },
-  { id: 'contacto', label: 'Contacto' },
 ];
 
 interface NavMenuProps {

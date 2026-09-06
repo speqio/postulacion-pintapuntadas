@@ -6,7 +6,6 @@ import { ObraBordadoSection } from './components/ObraBordadoSection';
 import { GallerySection } from './components/GallerySection';
 import { DifusionCatalogoSection } from './components/DifusionCatalogoSection';
 import { AboutSection } from './components/AboutSection';
-import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { ChevronUp } from 'lucide-react';
 
@@ -64,9 +63,6 @@ export default function App() {
 
         {/* About Section */}
         <AboutSection />
-
-        {/* Contact & Postulation */}
-        <ContactForm />
 
       </main>
 

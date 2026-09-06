@@ -2,6 +2,35 @@ import React, { useState } from 'react';
 import { Layers, Clock, Gem, Images, X, ZoomIn } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 import { DESIGNS_DATA } from '../data/designsData';
+import type { FichaObra } from '../types';
+
+const FICHA_ROWS: { label: string; value: (f: FichaObra) => string }[] = [
+  { label: 'Título', value: (f) => f.titulo },
+  { label: 'Autora', value: (f) => f.autora },
+  { label: 'Año de creación', value: (f) => f.anioCreacion },
+  { label: 'Técnica', value: (f) => f.tecnica },
+  { label: 'Materiales', value: (f) => f.materiales },
+  { label: 'Dimensiones', value: (f) => f.dimensiones },
+  { label: 'Peso', value: (f) => f.peso },
+  { label: 'Breve contexto', value: (f) => f.breveContexto },
+  { label: 'Valor estimado', value: (f) => `$${f.valorEstimado.toLocaleString('es-CL')} CLP` },
+];
+
+const FichaObraTable: React.FC<{ ficha: FichaObra }> = ({ ficha }) => (
+  <div className="border border-border-subtle">
+    <div className="bg-charcoal text-canvas text-center py-2.5">
+      <span className="text-xs font-sans uppercase tracking-[0.3em]">Ficha de Obra</span>
+    </div>
+    <dl className="divide-y divide-border-subtle">
+      {FICHA_ROWS.map((row) => (
+        <div key={row.label} className="grid grid-cols-[9rem_1fr] sm:grid-cols-[10rem_1fr] gap-3 px-4 py-2.5">
+          <dt className="text-sm font-sans font-medium text-charcoal">{row.label}</dt>
+          <dd className="text-sm font-sans text-body leading-relaxed">{row.value(ficha)}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+);
 
 const hexToHsl = (hex: string): [number, number, number] => {
   const value = hex.replace('#', '');
@@ -155,10 +184,14 @@ export const ObraBordadoSection: React.FC = () => {
                       </h3>
                     </div>
 
-                    {pieza.cita ? (
+                    {pieza.cita && (
                       <p className="font-serif italic text-xl sm:text-2xl text-charcoal leading-snug border-l-2 border-accent-muted pl-5">
                         "{pieza.cita}"
                       </p>
+                    )}
+
+                    {design.ficha ? (
+                      <FichaObraTable ficha={design.ficha} />
                     ) : (
                       <p className="font-sans text-base text-body leading-relaxed">
                         {design.description}
@@ -239,26 +272,27 @@ export const ObraBordadoSection: React.FC = () => {
       {/* Galería de Proceso */}
       {activeProceso && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal/85 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-charcoal/85 backdrop-blur-md animate-fadeIn"
           onClick={() => setActiveProceso(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-canvas border border-border-subtle p-6 sm:p-8 space-y-5"
+            className="relative flex flex-col max-h-[85vh] w-full max-w-4xl bg-canvas border border-border-subtle"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-8 sm:py-4 border-b border-border-subtle shrink-0">
               <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted">
                 Galería de Proceso
               </span>
               <button
                 onClick={() => setActiveProceso(null)}
-                className="p-2 rounded-full bg-black/60 text-white hover:bg-black transition-colors"
+                aria-label="Cerrar galería de proceso"
+                className="p-2.5 -m-1 rounded-full bg-black/60 text-white hover:bg-black transition-colors shrink-0"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5 sm:w-4 sm:h-4" />
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-8 overflow-y-auto">
               {activeProceso.map((foto, i) => (
                 <button
                   key={foto}
@@ -294,9 +328,10 @@ export const ObraBordadoSection: React.FC = () => {
           />
           <button
             onClick={() => setZoomedFoto(null)}
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white hover:bg-black transition-colors"
+            aria-label="Cerrar foto ampliada"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2.5 rounded-full bg-black/60 text-white hover:bg-black transition-colors"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5 sm:w-4 sm:h-4" />
           </button>
         </div>
       )}

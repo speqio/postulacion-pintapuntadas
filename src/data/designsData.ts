@@ -93,6 +93,17 @@ export const DESIGNS_DATA: DesignItem[] = [
     ],
     featured: true,
     isKitAvailable: true,
+    ficha: {
+      titulo: '"Un regalo de la naturaleza el desierto florido"',
+      autora: 'Pamela Rojas Botto',
+      anioCreacion: '2025',
+      tecnica: 'Bordado estilo "pintura con aguja" (needle painting) con efecto 3D.',
+      materiales: 'Hilo mercerizado de algodón en bastidor de madera.',
+      dimensiones: '22 cm',
+      peso: '75 gramos',
+      breveContexto: 'En pleno desierto de Atacama se presenta un fenómeno natural espectacular esperado por turistas y amantes de la naturaleza que admiran la flora de septiembre a noviembre, que se da cada 3 años o más según las precipitaciones.',
+      valorEstimado: 150000,
+    },
   },
   {
     id: 'valle-de-colchagua',
@@ -149,6 +160,17 @@ export const DESIGNS_DATA: DesignItem[] = [
     ],
     featured: true,
     isKitAvailable: true,
+    ficha: {
+      titulo: '"Un paisaje imponente con flora y fauna nativa, Parque Nacional Conguillío"',
+      autora: 'Pamela Rojas Botto',
+      anioCreacion: '2024',
+      tecnica: 'Bordado estilo "pintura con aguja" (needle painting) con efecto 3D.',
+      materiales: 'Hilo mercerizado de algodón en bastidor de madera.',
+      dimensiones: '22 cm',
+      peso: '75 gramos',
+      breveContexto: 'En la región de la Araucanía con 60.832 hectáreas, encontramos araucarias milenarias, especies endémicas, un lago acompañados de un Volcán protagonista de este parque el Llaima.',
+      valorEstimado: 150000,
+    },
   },
   {
     id: 'copihue-nativo',
@@ -229,6 +251,17 @@ export const DESIGNS_DATA: DesignItem[] = [
     ],
     featured: false,
     isKitAvailable: true,
+    ficha: {
+      titulo: '"Quirilluca playa de biodiversidad y belleza"',
+      autora: 'Pamela Rojas Botto',
+      anioCreacion: '2026',
+      tecnica: 'Bordado estilo "pintura con aguja" (needle painting) con efecto 3D.',
+      materiales: 'Hilo mercerizado de algodón en bastidor de madera.',
+      dimensiones: '22 cm',
+      peso: '75 gramos',
+      breveContexto: 'Ecosistema nativo con acantilados, entre Campeche y Maitencillo a 5 km de Puchuncaví, parte del parque Quirilluca con más de 125 hectáreas, declarado sitio prioritario de conservación de la biodiversidad, con especie protegida como el Belloto norte, monumento natural y vulnerable desde 1995.',
+      valorEstimado: 150000,
+    },
   }
 ];
 
