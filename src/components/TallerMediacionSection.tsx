@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
-import { Sprout, MapPinned, Map, Palette, Layers, Sparkles, BookOpen, HandHeart, Archive } from 'lucide-react';
+import { Sprout, MapPinned, Map, Palette, Layers, Sparkles, BookOpen, HandHeart, Archive, Camera } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
+import tallerDesarrollo1 from '../../imagenes/taller-desarrollo-1.jpg';
+import tallerDesarrollo2 from '../../imagenes/taller-desarrollo-2.jpg';
 
 const SESIONES = [
   {
@@ -32,7 +34,7 @@ const SESIONES = [
 
 export const TallerMediacionSection: React.FC = () => {
   return (
-    <section id="taller" className="py-16 lg:py-24 bg-panel border-b border-border-subtle">
+    <section id="taller" className="py-10 lg:py-14 bg-panel border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-14">
 
         {/* Header */}
@@ -106,6 +108,30 @@ export const TallerMediacionSection: React.FC = () => {
                 <div>
                   <strong className="block font-serif text-lg text-charcoal font-light">Catálogo final</strong>
                   <span className="text-xs font-sans uppercase tracking-wider text-muted">Difusión y registro</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Fotografías de los talleres en desarrollo */}
+            <div className="space-y-3">
+              <span className="text-xs font-sans uppercase tracking-[0.25em] text-accent-muted flex items-center gap-2">
+                <Camera className="w-3.5 h-3.5" />
+                Talleres en Desarrollo
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="aspect-4/3 overflow-hidden bg-panel border border-border-subtle group">
+                  <img
+                    src={tallerDesarrollo1}
+                    alt="Participantes bordando en el taller de Pintapuntadas"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="aspect-4/3 overflow-hidden bg-panel border border-border-subtle group">
+                  <img
+                    src={tallerDesarrollo2}
+                    alt="Grupo de bordadoras trabajando en sus piezas durante el taller"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
               </div>
             </div>

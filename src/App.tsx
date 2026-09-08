@@ -3,14 +3,21 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { TallerMediacionSection } from './components/TallerMediacionSection';
 import { ObraBordadoSection } from './components/ObraBordadoSection';
-import { GallerySection } from './components/GallerySection';
+import { KitMaterialesSection } from './components/KitMaterialesSection';
 import { DifusionCatalogoSection } from './components/DifusionCatalogoSection';
-import { AboutSection } from './components/AboutSection';
 import { Footer } from './components/Footer';
+import { MetodologiaPage } from './pages/MetodologiaPage';
 import { ChevronUp } from 'lucide-react';
 
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
+  const [path, setPath] = useState<string>(() => window.location.pathname);
+
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +35,26 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateTo = (targetPath: string) => {
+    if (targetPath !== window.location.pathname) {
+      window.history.pushState({}, '', targetPath);
+    }
+    setPath(targetPath);
+    window.scrollTo({ top: 0 });
+  };
+
   const scrollToSection = (sectionId: string) => {
+    if (sectionId.startsWith('/')) {
+      navigateTo(sectionId);
+      return;
+    }
+    if (path !== '/') {
+      navigateTo('/');
+      requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      });
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -42,28 +68,28 @@ export default function App() {
 
       {/* Main Page Layout */}
       <main className="flex-1 space-y-0">
-        {/* Hero Section */}
-        <div id="inicio">
-          <Hero
-            onExploreTaller={() => scrollToSection('taller')}
-          />
-        </div>
+        {path === '/metodologia' ? (
+          <MetodologiaPage onNavigate={scrollToSection} />
+        ) : (
+          <>
+            {/* Hero Section */}
+            <div id="inicio">
+              <Hero />
+            </div>
 
-        {/* Página 1: Dispositivo de Mediación y Taller */}
-        <TallerMediacionSection />
+            {/* Página 1: Dispositivo de Mediación y Taller */}
+            <TallerMediacionSection />
 
-        {/* Página 2: Prototipo Artístico y Muestras de Bordado */}
-        <ObraBordadoSection />
+            {/* Página 2: Prototipo Artístico y Muestras de Bordado */}
+            <ObraBordadoSection />
 
-        {/* Galería fotográfica de proceso y obras */}
-        <GallerySection />
+            {/* Página 3: Kit de Materiales e Insumos del Taller */}
+            <KitMaterialesSection />
 
-        {/* Página 3: Maquetado de Difusión y Catálogo */}
-        <DifusionCatalogoSection />
-
-        {/* About Section */}
-        <AboutSection />
-
+            {/* Página 4: Maquetado de Difusión y Catálogo */}
+            <DifusionCatalogoSection />
+          </>
+        )}
       </main>
 
       {/* Footer */}

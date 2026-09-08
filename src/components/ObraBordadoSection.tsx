@@ -121,11 +121,10 @@ const PIEZAS = [
 ] as const;
 
 export const ObraBordadoSection: React.FC = () => {
-  const [activeProceso, setActiveProceso] = useState<readonly string[] | null>(null);
   const [zoomedFoto, setZoomedFoto] = useState<string | null>(null);
 
   return (
-    <section id="obra" className="py-16 lg:py-24 bg-canvas border-b border-border-subtle">
+    <section id="obra" className="py-10 lg:py-14 bg-canvas border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-12">
 
         {/* Header */}
@@ -204,15 +203,6 @@ export const ObraBordadoSection: React.FC = () => {
                         <Clock className="w-3 h-3 text-accent-muted" />
                         {design.timeHours} horas de bordado
                       </span>
-                      {pieza.procesoFotos && (
-                        <button
-                          onClick={() => setActiveProceso(pieza.procesoFotos)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 bg-charcoal text-canvas hover:bg-[#333333] transition-colors uppercase tracking-[0.15em] text-xs"
-                        >
-                          <Images className="w-3 h-3 text-accent-muted" />
-                          Ver Proceso
-                        </button>
-                      )}
                     </div>
 
                     {/* Puntos usados */}
@@ -261,6 +251,35 @@ export const ObraBordadoSection: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* Fotos de proceso */}
+                  {pieza.procesoFotos && (
+                    <div className="lg:col-span-12 space-y-2">
+                      <span className="text-xs font-sans uppercase tracking-[0.2em] text-accent-muted flex items-center gap-1.5">
+                        <Images className="w-3.5 h-3.5" />
+                        Proceso de Bordado
+                      </span>
+                      <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                        {pieza.procesoFotos.map((foto, i) => (
+                          <button
+                            key={foto}
+                            type="button"
+                            onClick={() => setZoomedFoto(foto)}
+                            className="group relative aspect-square overflow-hidden bg-panel border border-border-subtle cursor-zoom-in"
+                          >
+                            <img
+                              src={foto}
+                              alt={`Foto de proceso ${i + 1} de ${design.title}`}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-300 flex items-center justify-center">
+                              <ZoomIn className="w-5 h-5 text-canvas opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                 </div>
               </ScrollReveal>
             );
@@ -268,52 +287,6 @@ export const ObraBordadoSection: React.FC = () => {
         </div>
 
       </div>
-
-      {/* Galería de Proceso */}
-      {activeProceso && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-charcoal/85 backdrop-blur-md animate-fadeIn"
-          onClick={() => setActiveProceso(null)}
-        >
-          <div
-            className="relative flex flex-col max-h-[85vh] w-full max-w-4xl bg-canvas border border-border-subtle"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-8 sm:py-4 border-b border-border-subtle shrink-0">
-              <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted">
-                Galería de Proceso
-              </span>
-              <button
-                onClick={() => setActiveProceso(null)}
-                aria-label="Cerrar galería de proceso"
-                className="p-2.5 -m-1 rounded-full bg-black/60 text-white hover:bg-black transition-colors shrink-0"
-              >
-                <X className="w-5 h-5 sm:w-4 sm:h-4" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-8 overflow-y-auto">
-              {activeProceso.map((foto, i) => (
-                <button
-                  key={foto}
-                  type="button"
-                  onClick={() => setZoomedFoto(foto)}
-                  className="group relative aspect-square overflow-hidden bg-panel border border-border-subtle cursor-zoom-in"
-                >
-                  <img
-                    src={foto}
-                    alt={`Foto de proceso ${i + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-300 flex items-center justify-center">
-                    <ZoomIn className="w-6 h-6 text-canvas opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Zoom de Foto de Proceso */}
       {zoomedFoto && (

@@ -13,9 +13,9 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'inicio', label: 'Inicio' },
   { id: 'taller', label: 'El Taller' },
   { id: 'obra', label: 'Obra y Bordado' },
-  { id: 'galeria', label: 'Galería' },
+  { id: 'kit', label: 'Kit de Materiales' },
   { id: 'difusion', label: 'Difusión y Catálogo' },
-  { id: 'nosotros', label: 'Sobre Nosotros' },
+  { id: '/metodologia', label: 'Metodología del Proyecto' },
 ];
 
 interface NavMenuProps {

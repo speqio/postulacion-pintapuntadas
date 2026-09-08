@@ -12,7 +12,7 @@ import social2cImg from '../../imagenes/quirilluca/quirillucaproceso1.jpg';
 
 export const DifusionCatalogoSection: React.FC = () => {
   return (
-    <section id="difusion" className="py-16 lg:py-24 bg-panel border-b border-border-subtle">
+    <section id="difusion" className="py-10 lg:py-14 bg-panel border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
 
         {/* Header */}
