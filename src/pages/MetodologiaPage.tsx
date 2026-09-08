@@ -11,9 +11,6 @@ import {
   CalendarRange,
   MessageCircleHeart,
   BookImage,
-  Wallet,
-  Sparkles,
-  Megaphone,
   Home,
   UploadCloud,
   MessageCircle,
@@ -38,24 +35,6 @@ import { NeedleThreadIcon } from '../components/NeedleThreadIcon';
 interface MetodologiaPageProps {
   onNavigate: (target: string) => void;
 }
-
-const RECOMENDACIONES = [
-  {
-    icono: Wallet,
-    titulo: 'Viabilidad',
-    detalle: 'Requerimientos técnicos mínimos: desarrollo en VS Code sobre React + Vite y hosting en Vercel, con despliegue continuo desde el repositorio. Sin servidores que administrar ni costos de mantención.',
-  },
-  {
-    icono: Sparkles,
-    titulo: 'Calidad',
-    detalle: 'Apóyate en referencias visuales, bocetos o un PDF maquetado (no solo texto). Incluir esquemas o diagramas de flujo eleva considerablemente la presentación.',
-  },
-  {
-    icono: Megaphone,
-    titulo: 'Impacto Potencial',
-    detalle: 'Esta vitrina y metodología en línea activan la comunidad, construyen nuevas narrativas territoriales y permiten la mediación cultural abierta a personas ajenas al taller presencial.',
-  },
-];
 
 const SESIONES_DETALLE = [
   {
@@ -589,31 +568,6 @@ export const MetodologiaPage: React.FC<MetodologiaPageProps> = ({ onNavigate }) 
               </button>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Recomendaciones para robustecer los criterios de evaluación */}
-      <section className="py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 space-y-10">
-          <ScrollReveal direction="up">
-            <div className="text-center max-w-2xl mx-auto space-y-3">
-              <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-light">
-                Recomendaciones para Robustecer los Criterios de Evaluación
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {RECOMENDACIONES.map((rec, i) => (
-              <ScrollReveal key={rec.titulo} direction="up" delay={i * 0.1}>
-                <div className="h-full bg-panel-alt border border-border-subtle p-6 sm:p-7 space-y-3">
-                  <rec.icono className="w-5 h-5 text-accent-muted" />
-                  <h3 className="font-serif text-lg text-charcoal font-light">{rec.titulo}</h3>
-                  <p className="text-sm font-sans text-body leading-relaxed">{rec.detalle}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
