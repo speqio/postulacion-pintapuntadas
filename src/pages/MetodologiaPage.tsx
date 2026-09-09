@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import {
-  ArrowLeft,
   ArrowRight,
   ArrowDown,
   Compass,
@@ -20,7 +18,6 @@ import {
   Image as ImageIcon,
   Code2,
   Triangle,
-  Construction,
   KeyRound,
   ListChecks,
   Eye,
@@ -31,6 +28,7 @@ import {
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { NeedleThreadIcon } from '../components/NeedleThreadIcon';
+import { CatalogoDiptico } from '../components/CatalogoDiptico';
 
 interface MetodologiaPageProps {
   onNavigate: (target: string) => void;
@@ -103,19 +101,6 @@ const FlowNode: React.FC<{ label: string; sub?: string; emphasis?: boolean }> = 
 export const MetodologiaPage: React.FC<MetodologiaPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-canvas">
-      {/* Breadcrumb / Volver */}
-      <div className="border-b border-border-subtle bg-panel">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 py-4">
-          <button
-            onClick={() => onNavigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.25em] text-muted hover:text-accent-muted transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Volver al Inicio
-          </button>
-        </div>
-      </div>
-
       {/* Encabezado */}
       <section className="py-12 lg:py-16 border-b border-border-subtle">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 space-y-3 text-center">
@@ -539,49 +524,27 @@ export const MetodologiaPage: React.FC<MetodologiaPageProps> = ({ onNavigate }) 
         </div>
       </section>
 
-      {/* EL QUÉ — Catálogo Digital y Galería de Obras (pendiente) */}
+      {/* EL QUÉ — Catálogo Físico - Díptico */}
       <section className="py-12 lg:py-16 border-b border-border-subtle bg-panel">
-        <div className="max-w-4xl mx-auto px-6 sm:px-12">
+        <div className="max-w-6xl mx-auto px-6 sm:px-12 space-y-8">
           <ScrollReveal direction="up">
-            <div className="text-center space-y-4 p-8 sm:p-12 bg-canvas border border-dashed border-border-dark">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
               <span className="text-xs font-sans tracking-[0.3em] uppercase text-accent-muted font-normal flex items-center justify-center gap-2">
                 <BookImage className="w-3.5 h-3.5" />
                 El "Qué"
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-light">
-                Catálogo Digital y Galería de Obras
+                Catálogo Físico - Díptico
               </h2>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-border-subtle text-[10px] uppercase tracking-[0.2em] text-muted font-sans">
-                <Construction className="w-3.5 h-3.5 text-accent-muted" />
-                Sección disponible para completar
-              </div>
-              <p className="font-sans text-sm sm:text-base text-body leading-relaxed max-w-2xl mx-auto">
-                Aquí se desarrollará la portada e identidad visual del catálogo y la ficha tipo / maqueta de obra de cada participante (fotografía del bordado, nombre del trabajo, reseña biográfica y elementos del territorio representados).
+              <p className="font-sans text-sm sm:text-base text-body leading-relaxed">
+                Las dos caras del catálogo impreso: portada informativa del taller y galería de obras seleccionadas.
               </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('difusion')}
-                className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-charcoal hover:text-accent-muted transition-colors border-b border-charcoal hover:border-accent-muted pb-0.5"
-              >
-                Ver avance de catálogo en el sitio
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
 
-      {/* CTA de vuelta */}
-      <section className="py-10 border-t border-border-subtle">
-        <div className="max-w-5xl mx-auto px-6 sm:px-12 flex justify-center">
-          <motion.button
-            onClick={() => onNavigate('/')}
-            whileHover={{ x: -4 }}
-            className="inline-flex items-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.3em] font-sans text-canvas bg-charcoal hover:bg-[#333333] transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Volver al Inicio
-          </motion.button>
+          <ScrollReveal direction="up" delay={0.1}>
+            <CatalogoDiptico />
+          </ScrollReveal>
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Package, Scissors } from 'lucide-react';
+import { Package, Scissors, CircleDot } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 import kitMateriales1 from '../../imagenes/taller-registro-1.jfif';
 import kitMateriales2 from '../../imagenes/taller-registro-2.jfif';
@@ -34,18 +34,18 @@ export const KitMaterialesSection: React.FC = () => {
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={0.1}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start bg-panel-alt border border-border-subtle p-6 sm:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 lg:items-stretch bg-panel-alt border border-border-subtle p-6 sm:p-8">
 
             {/* Fotografías del kit */}
-            <div className="lg:col-span-8 grid grid-cols-1 gap-4">
-              <div className="aspect-4/3 overflow-hidden bg-panel border border-border-subtle group">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="aspect-square sm:aspect-4/5 overflow-hidden bg-panel border border-border-subtle group">
                 <img
                   src={kitMateriales1}
                   alt="Mesa de trabajo con bastidores, hilos y materiales de bordado del taller"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="aspect-4/3 overflow-hidden bg-panel border border-border-subtle group">
+              <div className="aspect-square sm:aspect-4/5 overflow-hidden bg-panel border border-border-subtle group">
                 <img
                   src={kitMateriales2}
                   alt="Bastidores con bocetos guiados y cajas de hilos de bordado"
@@ -55,14 +55,15 @@ export const KitMaterialesSection: React.FC = () => {
             </div>
 
             {/* Listado de insumos */}
-            <div className="lg:col-span-4 space-y-4">
-              <span className="text-xs font-sans uppercase tracking-[0.2em] text-accent-muted flex items-center gap-1.5">
+            <div className="lg:col-span-5 flex flex-col">
+              <span className="text-xs font-sans uppercase tracking-[0.2em] text-accent-muted flex items-center gap-1.5 mb-4">
                 <Scissors className="w-3.5 h-3.5" />
                 Cada Participante Recibe
               </span>
-              <ul className="divide-y divide-border-subtle border border-border-subtle bg-canvas">
+              <ul className="flex-1 flex flex-col divide-y divide-border-subtle border border-border-subtle bg-canvas">
                 {INSUMOS.map((item) => (
-                  <li key={item} className="px-4 py-3 text-sm font-sans text-body">
+                  <li key={item} className="flex-1 flex items-center gap-3 px-4 py-3 sm:py-4 text-sm font-sans text-body">
+                    <CircleDot className="w-3 h-3 text-accent-muted shrink-0" />
                     {item}
                   </li>
                 ))}
