@@ -117,7 +117,7 @@ export const MetodologiaPage: React.FC<MetodologiaPageProps> = ({ onNavigate }) 
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.2}>
             <p className="font-serif italic text-base sm:text-lg text-muted max-w-3xl mx-auto">
-              Dispositivo web, metodología participativa por fases y catálogo digital: la arquitectura completa del proyecto Pintapuntadas.
+              Dispositivo web, metodología participativa por fases y catálogo digital: la arquitectura completa del proyecto Bordando nuestro Patrimonio.
             </p>
           </ScrollReveal>
         </div>

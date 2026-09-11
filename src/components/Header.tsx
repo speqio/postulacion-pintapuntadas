@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ onLogoClick, onNavigate }) => {
           className="cursor-pointer group flex flex-col items-start shrink min-w-0"
         >
           <span className="font-serif text-base sm:text-xl lg:text-2xl tracking-widest sm:tracking-[0.16em] text-charcoal font-light uppercase transition-colors truncate">
-            Pintapuntadas
+            Bordando nuestro Patrimonio
           </span>
           <span className="text-[9px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.18em] uppercase text-accent-muted font-sans -mt-0.5 font-normal truncate max-w-42.5 sm:max-w-none">
             Bordados por Pamela Rojas

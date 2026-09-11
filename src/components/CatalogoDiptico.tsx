@@ -30,7 +30,44 @@ const MODULOS = [
   },
 ];
 
-const OBRAS = [1, 2, 3, 4, 5, 6];
+const OBRAS = [
+  {
+    numero: 1,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+  {
+    numero: 2,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+  {
+    numero: 3,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+  {
+    numero: 4,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+  {
+    numero: 5,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+  {
+    numero: 6,
+    autora: 'Nombre Apellido',
+    resena:
+      'Reseña del bordado: paisaje elegido, técnica y detalles del proceso. Contexto patrimonial del lugar retratado y motivo de la elección personal. Aprendizajes y desafíos durante las sesiones de needle painting.',
+  },
+];
 
 /** Díptico del catálogo físico: reproduce en código las dos caras del catálogo impreso. */
 export const CatalogoDiptico: React.FC = () => {
@@ -44,7 +81,8 @@ export const CatalogoDiptico: React.FC = () => {
             Dispositivo de Mediación y Taller
           </span>
           <h4 className="font-serif text-xl sm:text-2xl text-charcoal font-light leading-snug">
-            Taller de Bordado con Técnica Needle Painting y Mediación Patrimonial
+            Bordando nuestro Patrimonio <br />
+            para el Registro y Memoria a través de Artesanía Textil
           </h4>
           <p className="font-serif italic text-sm text-muted leading-relaxed">
             "Un ciclo de talleres donde aprender a bordar en pintura con aguja va de la mano de conocer, en profundidad, el propio territorio."
@@ -144,22 +182,25 @@ export const CatalogoDiptico: React.FC = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          {OBRAS.map((n) => (
-            <div key={n} className="border border-border-subtle overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {OBRAS.map((obra) => (
+            <div key={obra.numero} className="border border-border-subtle overflow-hidden">
               <div className="relative aspect-4/3 bg-panel flex items-center justify-center">
                 <ImageIcon className="w-6 h-6 text-border-dark" />
                 <span className="absolute top-2 left-2 w-5 h-5 flex items-center justify-center bg-charcoal text-canvas text-[10px] font-sans">
-                  {String(n).padStart(2, '0')}
+                  {String(obra.numero).padStart(2, '0')}
                 </span>
                 <span className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-charcoal/70 text-canvas text-[8px] font-sans uppercase tracking-[0.1em]">
                   Foto por agregar
                 </span>
               </div>
-              <div className="p-2.5 space-y-1.5 bg-panel-alt">
-                <span className="block w-1.5 h-1.5 rounded-full bg-accent-muted" />
-                <span className="block h-2 w-3/4 bg-border-subtle" />
-                <span className="block h-2 w-1/2 bg-border-subtle" />
+              <div className="p-3 space-y-1.5 bg-panel-alt">
+                <p className="text-[10px] font-sans uppercase tracking-[0.15em] text-accent-muted">
+                  Bordado por {obra.autora}
+                </p>
+                <p className="text-xs font-sans text-body leading-relaxed">
+                  {obra.resena}
+                </p>
               </div>
             </div>
           ))}

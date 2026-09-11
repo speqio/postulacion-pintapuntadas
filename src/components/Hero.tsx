@@ -28,9 +28,9 @@ export const Hero: React.FC = () => {
             <ScrollReveal direction="up" delay={0.2}>
               <div className="space-y-4">
                 <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.08] text-charcoal">
-                  Un Paisaje Patrimonial <br />
+                  Bordando nuestro Patrimonio <br />
                   <span className="italic font-light text-charcoal">
-                    Bordado Puntada a Puntada.
+                    para el Registro y Memoria a través de Artesanía Textil
                   </span>
                 </h1>
                 <p className="font-sans text-base sm:text-lg text-body max-w-md leading-snug">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Instagram, Mail, MapPin } from 'lucide-react';
+import { Heart, Mail, MapPin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-7 space-y-4">
             <div className="space-y-1">
               <span className="font-serif text-3xl font-light text-canvas tracking-tight block">
-                pintapuntadas
+                Bordando nuestro Patrimonio
               </span>
               <span className="block text-[10px] tracking-[0.25em] uppercase text-accent-muted font-sans font-normal">
                 Talleres de Bordado por Pamela Rojas Botto
@@ -34,20 +34,10 @@ export const Footer: React.FC = () => {
               Redes & Contacto
             </span>
 
-            <a
-              href="https://instagram.com/pintapuntadas"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#262626] border border-[#333333] hover:border-accent-muted transition-colors text-sm text-canvas"
-            >
-              <Instagram className="w-4 h-4 text-accent-muted" />
-              <span>@pintapuntadas en Instagram</span>
-            </a>
-
             <div className="space-y-1.5 text-sm text-muted pt-2">
               <p className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-accent-muted" />
-                contacto@pintapuntadas.cl
+                pamelabotto1975@gmail.com
               </p>
               <p className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-accent-muted" />
@@ -60,7 +50,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Legal bar */}
         <div className="pt-8 border-t border-[#333333] flex flex-col sm:flex-row items-center justify-between text-sm text-muted font-sans gap-2">
-          <p>© 2026 Pintapuntadas. Todos los derechos reservados.</p>
+          <p>© 2026 Bordando nuestro Patrimonio. Todos los derechos reservados.</p>
           <p className="flex items-center gap-1">
             Diseñado con <Heart className="w-3 h-3 text-accent-muted fill-current" /> para el bordado patrimonial
           </p>

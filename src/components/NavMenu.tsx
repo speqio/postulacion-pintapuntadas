@@ -114,7 +114,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ onNavigate }) => {
                 </nav>
 
                 <div className="px-6 sm:px-10 py-6 border-t border-border-subtle text-sm text-muted font-sans shrink-0">
-                  Pintapuntadas · Región de Valparaíso
+                  Bordando nuestro Patrimonio · Región de Valparaíso
                 </div>
               </motion.div>
             </div>

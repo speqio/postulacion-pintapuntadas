@@ -128,7 +128,7 @@ export const DESIGNS_DATA: DesignItem[] = [
     includedInKit: [
       'Bordado artesanal terminado a mano por Pamela Rojas Botto',
       'Bastidor circular de haya de 22 cm listo para colgar',
-      'Sello de autenticidad Pintapuntadas Limache'
+      'Sello de autenticidad Bordando nuestro Patrimonio Limache'
     ],
     featured: true,
     isKitAvailable: true,
@@ -194,7 +194,7 @@ export const DESIGNS_DATA: DesignItem[] = [
     includedInKit: [
       'Bordado a mano por Pamela Rojas Botto en bastidor de 18 cm',
       'Protección textil para conservación de color',
-      'Caja de presentación de autor Pintapuntadas'
+      'Caja de presentación de autor Bordando nuestro Patrimonio'
     ],
     featured: true,
     isKitAvailable: true,
@@ -262,6 +262,86 @@ export const DESIGNS_DATA: DesignItem[] = [
       breveContexto: 'Ecosistema nativo con acantilados, entre Campeche y Maitencillo a 5 km de Puchuncaví, parte del parque Quirilluca con más de 125 hectáreas, declarado sitio prioritario de conservación de la biodiversidad, con especie protegida como el Belloto norte, monumento natural y vulnerable desde 1995.',
       valorEstimado: 150000,
     },
+  },
+  {
+    id: 'avenida-urmeneta-limache',
+    title: 'Avenida Urmeneta en Otoño',
+    subtitle: 'Bordado Patrimonial Urbano de Limache',
+    category: 'patrimoniales',
+    categoryLabel: 'Bordados Patrimoniales',
+    location: 'Limache, Valparaíso (Bordado en Limache)',
+    image: 'https://images.unsplash.com/photo-1508669232496-137b159c1cdb?auto=format&fit=crop&w=1200&q=80',
+    price: 55000,
+    difficulty: 'Avanzado',
+    dimensions: 'Bastidor Madera 25 cm',
+    timeHours: 40,
+    description: 'La alameda de la Avenida Urmeneta, ícono patrimonial de Limache, recreada en hilos de algodón por Pamela Rojas Botto. Follaje otoñal en degradé de ocres, rojos y verdes sobre una calzada bordada en punto largo.',
+    stitchesUsed: ['Punto Largo', 'Nudo Francés', 'Punto de Relleno Matizado', 'Punto Tallo'],
+    threadPalette: [
+      { code: 'DMC 921', name: 'Naranja Otoñal', hex: '#C1602E' },
+      { code: 'DMC 782', name: 'Ocre Alameda', hex: '#BA7A29' },
+      { code: 'DMC 838', name: 'Tronco Centenario', hex: '#4A3728' },
+      { code: 'DMC 3768', name: 'Cielo de Limache', hex: '#AEC4D1' },
+    ],
+    includedInKit: [
+      'Obra bordada a mano por Pamela Rojas Botto en bastidor de 25 cm',
+      'Bastidor de madera de haya pulida listo para colgar',
+      'Certificado de autenticidad firmado por Pamela Rojas Botto',
+      'Sello de autenticidad Bordando nuestro Patrimonio Limache'
+    ],
+    featured: true,
+    isKitAvailable: true,
+    ficha: {
+      titulo: '"La alameda que guarda la memoria de Limache"',
+      autora: 'Pamela Rojas Botto',
+      anioCreacion: '2026',
+      tecnica: 'Bordado estilo "pintura con aguja" (needle painting) con efecto 3D.',
+      materiales: 'Hilo mercerizado de algodón en bastidor de madera.',
+      dimensiones: '25 cm',
+      peso: '80 gramos',
+      breveContexto: 'La Avenida Urmeneta es una de las alamedas patrimoniales más reconocidas de Limache, bordeada de árboles centenarios que en otoño tiñen de ocres y rojos el recorrido, y que forma parte de la identidad urbana y arquitectónica de la comuna.',
+      valorEstimado: 150000,
+    },
+  },
+  {
+    id: 'piedra-buque',
+    title: 'Piedra del Buque',
+    subtitle: 'Bordado Costero de Roca y Acantilado',
+    category: 'patrimoniales',
+    categoryLabel: 'Bordados Patrimoniales',
+    location: 'Puchuncaví / Valparaíso (Bordado en Limache)',
+    image: 'https://plus.unsplash.com/premium_photo-1677355760442-696f5842a34f?auto=format&fit=crop&w=1200&q=80',
+    price: 52000,
+    difficulty: 'Avanzado',
+    dimensions: 'Bastidor Madera 22 cm',
+    timeHours: 40,
+    description: 'La icónica formación rocosa de la Piedra del Buque bordada a mano por Pamela Rojas Botto, con el mar en degradé de azules y la vegetación costera en verdes y ocres sobre el acantilado.',
+    stitchesUsed: ['Punto Lanzado', 'Punto de Relleno Matizado', 'Punto Tallo', 'Punto Margarita'],
+    threadPalette: [
+      { code: 'DMC 930', name: 'Azul Marino Costero', hex: '#4C6B84' },
+      { code: 'DMC 644', name: 'Roca Arenisca', hex: '#B5A78C' },
+      { code: 'DMC 3346', name: 'Verde Acantilado', hex: '#4F7A4A' },
+      { code: 'DMC 3768', name: 'Cielo Costero', hex: '#AEC4D1' },
+    ],
+    includedInKit: [
+      'Obra bordada a mano por Pamela Rojas Botto en bastidor de 22 cm',
+      'Bastidor de madera de haya pulida listo para colgar',
+      'Certificado de autenticidad firmado por Pamela Rojas Botto',
+      'Sello de autenticidad Bordando nuestro Patrimonio Limache'
+    ],
+    featured: true,
+    isKitAvailable: true,
+    ficha: {
+      titulo: '"La roca que navega sobre el acantilado"',
+      autora: 'Pamela Rojas Botto',
+      anioCreacion: '2026',
+      tecnica: 'Bordado estilo "pintura con aguja" (needle painting) con efecto 3D.',
+      materiales: 'Hilo mercerizado de algodón en bastidor de madera.',
+      dimensiones: '22 cm',
+      peso: '75 gramos',
+      breveContexto: 'La Piedra del Buque es una formación rocosa costera del litoral de Puchuncaví, cercana a Quirilluca, que emerge sobre el acantilado con la silueta de una embarcación varada, rodeada de vegetación nativa y vista directa al Pacífico.',
+      valorEstimado: 150000,
+    },
   }
 ];
 
@@ -273,7 +353,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     image: 'https://images.unsplash.com/photo-1568288796918-03e7d93306bd?auto=format&fit=crop&w=1000&q=80',
     aspectRatio: 'portrait',
     description: 'Obra terminada por Pamela Rojas Botto lista para colgar. Bordado minucioso en lino natural.',
-    location: 'Taller Pintapuntadas, Limache',
+    location: 'Taller Bordando nuestro Patrimonio, Limache',
     technique: 'Bordado de altorrelieve y matices'
   },
   {

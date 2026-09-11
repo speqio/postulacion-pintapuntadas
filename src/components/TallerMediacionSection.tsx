@@ -45,7 +45,8 @@ export const TallerMediacionSection: React.FC = () => {
               Dispositivo de Mediación y Taller
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-light">
-              Taller de Bordado con Técnica Needle Painting y Mediación Patrimonial
+              Bordando nuestro Patrimonio <br />
+              para el Registro y Memoria a través de Artesanía Textil
             </h2>
             <p className="font-serif italic text-base sm:text-lg text-muted">
               Un ciclo de talleres donde aprender a bordar en pintura con aguja va de la mano de conocer, en profundidad, el propio territorio.
@@ -122,7 +123,7 @@ export const TallerMediacionSection: React.FC = () => {
                 <div className="aspect-4/3 overflow-hidden bg-panel border border-border-subtle group">
                   <img
                     src={tallerDesarrollo1}
-                    alt="Participantes bordando en el taller de Pintapuntadas"
+                    alt="Participantes bordando en el taller de Bordando nuestro Patrimonio"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

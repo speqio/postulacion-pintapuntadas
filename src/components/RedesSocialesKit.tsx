@@ -62,7 +62,7 @@ export const RedesSocialesKit: React.FC = () => {
             <NeedleThreadIcon className="w-4 h-4 text-accent-muted" />
           </div>
           <div>
-            <p className="font-serif text-2xl text-charcoal font-light leading-none">Pintapuntadas</p>
+            <p className="font-serif text-2xl text-charcoal font-light leading-none">Bordando nuestro Patrimonio</p>
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted font-sans mt-1">Brand Kit · Redes Sociales</p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export const RedesSocialesKit: React.FC = () => {
           <div className="absolute top-4 inset-x-4 flex items-center justify-between">
             <span className="text-[8px] uppercase tracking-[0.3em] text-canvas/80 font-sans flex items-center gap-1.5">
               <NeedleThreadIcon className="w-3 h-3" />
-              Pintapuntadas
+              Bordando nuestro Patrimonio
             </span>
             <FormatTag label="IG Post · 1080×1080" tone="dark" />
           </div>
@@ -200,7 +200,7 @@ export const RedesSocialesKit: React.FC = () => {
           <div className="relative flex items-center justify-between">
             <span className="text-[9px] uppercase tracking-[0.25em] text-accent-muted font-sans flex items-center gap-1.5">
               <NeedleThreadIcon className="w-3.5 h-3.5" />
-              Pintapuntadas
+              Bordando nuestro Patrimonio
             </span>
             <FormatTag label="TikTok · 1080×1920" tone="dark" />
           </div>
@@ -291,7 +291,7 @@ export const RedesSocialesKit: React.FC = () => {
               <NeedleThreadIcon className="w-4 h-4 text-accent-muted" />
             </div>
             <div>
-              <h5 className="font-serif text-xl sm:text-2xl text-canvas font-light leading-none">Pintapuntadas</h5>
+              <h5 className="font-serif text-xl sm:text-2xl text-canvas font-light leading-none">Bordando nuestro Patrimonio</h5>
               <p className="text-[9px] uppercase tracking-[0.25em] text-accent-muted font-sans mt-1.5">
                 Needle Painting &amp; Mediación Patrimonial
               </p>

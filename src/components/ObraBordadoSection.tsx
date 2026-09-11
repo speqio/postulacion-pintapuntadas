@@ -98,6 +98,12 @@ import atacamaProceso3 from '../../imagenes/atacama/AP3.jfif';
 import conguillioProceso1 from '../../imagenes/conguillio/cp1.jfif';
 import conguillioProceso2 from '../../imagenes/conguillio/cp2.jfif';
 import conguillioProceso3 from '../../imagenes/conguillio/cp3.jfif';
+import urmenetaFoto from '../../imagenes/lim3.png';
+import urmenetaProceso1 from '../../imagenes/lim2.png';
+import urmenetaProceso2 from '../../imagenes/lim1.png';
+import buqueFoto from '../../imagenes/buque3.png';
+import buqueProceso1 from '../../imagenes/buque1.png';
+import buqueProceso2 from '../../imagenes/buque2.png';
 
 const PIEZAS = [
   {
@@ -117,6 +123,18 @@ const PIEZAS = [
     foto: conguillioFoto,
     cita: null,
     procesoFotos: [conguillioProceso1, conguillioProceso2, conguillioProceso3],
+  },
+  {
+    id: 'avenida-urmeneta-limache',
+    foto: urmenetaFoto,
+    cita: 'Bordé la Avenida Urmeneta para guardar la sombra de sus árboles centenarios, esa alameda que todos en Limache reconocemos como propia.',
+    procesoFotos: [urmenetaProceso1, urmenetaProceso2, urmenetaFoto],
+  },
+  {
+    id: 'piedra-buque',
+    foto: buqueFoto,
+    cita: 'La Piedra del Buque parece navegar sobre el acantilado; quise bordar ese instante en que la roca, el mar y la vegetación costera se sostienen entre sí.',
+    procesoFotos: [buqueProceso1, buqueProceso2, buqueFoto],
   },
 ] as const;
 
